@@ -28,7 +28,7 @@ class Facedec(object):
         self.descriptors = []
         self.candidate = ["kk/unknown.jpg"]
         self.face_path = face_path
-        self.load_know_person(False)
+        self.load_know_person(True)
 
     def load_know_person(self,reload=False):
         descriptors_path = self.face_path+"/descriptors.pk"
@@ -98,7 +98,7 @@ class Facedec(object):
                     print("The person is: {},PR: {}".format(name,pr))
                     
                     
-            # cv2.imshow(file_name,frame)
+            cv2.imshow(file_name,frame)
             if cv2.waitKey(5)&0xFF==ord('q'):
                 break
             # 保存视频
@@ -184,4 +184,4 @@ class Facedec(object):
 
 if __name__ == '__main__':
     f = Facedec("know_pic/qy")
-    f.check("s02/S02E04.mkv")
+    f.check("video/s02/S02E07.mkv")
